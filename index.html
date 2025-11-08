@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ORVCLE — Биография</title>
+    <meta name="description" content="Краткая биография ORVCLE." />
+    <meta name="color-scheme" content="dark" />
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body>
+    <canvas id="bg-canvas" class="bg-canvas" aria-hidden="true"></canvas>
+    <header class="site-header" role="banner">
+      <div class="container header-inner">
+        <nav class="lang-switch" aria-label="Controls">
+          <button id="lang-ru" data-lang="ru" class="lang-btn is-active" type="button" aria-pressed="true">RU</button>
+          <button id="lang-en" data-lang="en" class="lang-btn" type="button" aria-pressed="false">EN</button>
+          <button id="secret-btn" class="lang-btn" type="button" aria-pressed="false">secret</button>
+        </nav>
+      </div>
+    </header>
+
+    <aside id="sidebar" class="sidebar" aria-label="Calendar">
+      <div class="sidebar-inner">
+        <section class="calendar" aria-labelledby="calTitle">
+          <div class="cal-header">
+            <button class="cal-nav" id="calPrev" type="button" aria-label="Previous month">‹</button>
+            <h3 class="cal-title" id="calTitle">Calendar</h3>
+            <button class="cal-nav" id="calNext" type="button" aria-label="Next month">›</button>
+          </div>
+          <div class="cal-week" id="calWeek"></div>
+          <div class="cal-grid" id="calGrid" aria-live="polite" aria-label="Month days"></div>
+        </section>
+      </div>
+    </aside>
+
+    <aside id="sidebar-right" class="sidebar-right" aria-label="Time">
+      <div class="sidebar-inner">
+        <section class="time" aria-label="Current time">
+          <div class="time-digital" id="timeDigital">00:00:00.000</div>
+          <canvas id="timeAnalog" class="time-analog" width="120" height="120" aria-hidden="false"></canvas>
+        </section>
+      </div>
+    </aside>
+
+    <main id="top" class="main">
+      <section class="hero section" aria-labelledby="nickname">
+        <div class="container">
+          <h1 class="hero-title"><span id="nickname">ORVCLE</span></h1>
+          <p class="hero-subtitle" id="tagline">Один из первых веб‑проектов</p>
+          <div class="hero-extra">
+            <p id="aboutText" class="hero-about">Здесь будет короткий абзац о вас. Текст можно будет редактировать позже.</p>
+            <div class="social-icons hidden" id="socialIcons" aria-label="Contacts"></div>
+          </div>
+        </div>
+      </section>
+
+      
+
+      <section class="section" id="contacts" aria-labelledby="contactsTitle">
+        <div class="container">
+          <ul class="contact-list" id="contactList" aria-label="Contacts">
+            <li id="contact-email" class="hidden"><span class="contact-label">Email:</span> <a id="emailLink" href="#" rel="noopener">email@example.com</a></li>
+            <li id="contact-other" class="hidden"><span class="contact-label" id="otherLabel">Other:</span> <a id="otherLink" href="#" rel="noopener">link</a></li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+      <div class="container">
+        <small id="copyright">© ORVCLE, 2025</small>
+      </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+  </body>
+  </html>
