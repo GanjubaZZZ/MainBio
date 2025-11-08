@@ -17,7 +17,7 @@ A simple, minimalist, one‑page biography site with a RU/EN language toggle. Us
 - `index.html`: Structure/markup (you rarely need to change this).
 
 ## Language toggle
-
+## sad
 - The site detects your browser language (RU if it starts with `ru`), but stores the chosen language in `localStorage` under the key `lang`.
 - Use the RU/EN buttons in the header to switch languages.
 
