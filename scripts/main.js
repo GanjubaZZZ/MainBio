@@ -1,4 +1,4 @@
-"use strict";
+﻿"use strict";
 
 // === EDIT THIS SECTION ===
 // Minimal config for your site. Replace placeholders later.
@@ -6,14 +6,14 @@ const SITE = {
   nickname: "ORVCLE", // Your public nickname
   text: {
     ru: {
-      titleSuffix: "— Биография",
-      tagline: "Минималистичный сайт-биография",
-      aboutTitle: "Обо мне",
+      titleSuffix: "вЂ” Р‘РёРѕРіСЂР°С„РёСЏ",
+      tagline: "РњРёРЅРёРјР°Р»РёСЃС‚РёС‡РЅС‹Р№ СЃР°Р№С‚-Р±РёРѕРіСЂР°С„РёСЏ",
+      aboutTitle: "РћР±Рѕ РјРЅРµ",
       aboutText:
-        "Здесь будет короткий абзац о вас: кто вы, чем занимаетесь, какие ключевые интересы. Этот текст легко отредактировать в scripts/main.js.",
-      contactsTitle: "Контакты",
-      contactNote: "Ссылки будут добавлены позже.",
-      otherLabel: "Другое",
+        "Р—РґРµСЃСЊ Р±СѓРґРµС‚ РєРѕСЂРѕС‚РєРёР№ Р°Р±Р·Р°С† Рѕ РІР°СЃ: РєС‚Рѕ РІС‹, С‡РµРј Р·Р°РЅРёРјР°РµС‚РµСЃСЊ, РєР°РєРёРµ РєР»СЋС‡РµРІС‹Рµ РёРЅС‚РµСЂРµСЃС‹. Р­С‚РѕС‚ С‚РµРєСЃС‚ Р»РµРіРєРѕ РѕС‚СЂРµРґР°РєС‚РёСЂРѕРІР°С‚СЊ РІ scripts/main.js.",
+      contactsTitle: "РљРѕРЅС‚Р°РєС‚С‹",
+      contactNote: "РЎСЃС‹Р»РєРё Р±СѓРґСѓС‚ РґРѕР±Р°РІР»РµРЅС‹ РїРѕР·Р¶Рµ.",
+      otherLabel: "Р”СЂСѓРіРѕРµ",
       emailLabel: "Email",
       telegramLabel: "Telegram",
       githubLabel: "GitHub",
@@ -21,13 +21,13 @@ const SITE = {
       soundcloudLabel: "SoundCloud",
       instagramLabel: "Instagram",
       telegramBotLabel: "Telegram Archive",
-      botNote: "Телеграм-бот для поиска открытых данных (OSINT) по публичным источникам. На момент 07.11.2025 — закрытое бета-тестирование; публичный релиз запланирован. Используйте только в рамках закона и правил платформ.",
+      botNote: "РўРµР»РµРіСЂР°Рј-Р±РѕС‚ РґР»СЏ РїРѕРёСЃРєР° РѕС‚РєСЂС‹С‚С‹С… РґР°РЅРЅС‹С… (OSINT) РїРѕ РїСѓР±Р»РёС‡РЅС‹Рј РёСЃС‚РѕС‡РЅРёРєР°Рј. РќР° РјРѕРјРµРЅС‚ 07.11.2025 вЂ” Р·Р°РєСЂС‹С‚РѕРµ Р±РµС‚Р°-С‚РµСЃС‚РёСЂРѕРІР°РЅРёРµ; РїСѓР±Р»РёС‡РЅС‹Р№ СЂРµР»РёР· Р·Р°РїР»Р°РЅРёСЂРѕРІР°РЅ. РСЃРїРѕР»СЊР·СѓР№С‚Рµ С‚РѕР»СЊРєРѕ РІ СЂР°РјРєР°С… Р·Р°РєРѕРЅР° Рё РїСЂР°РІРёР» РїР»Р°С‚С„РѕСЂРј.",
       tiktokLabel: "TikTok",
       discordLabel: "Discord",
-      metaDescription: "Краткая биография {nickname}."
+      metaDescription: "РљСЂР°С‚РєР°СЏ Р±РёРѕРіСЂР°С„РёСЏ {nickname}."
     },
     en: {
-      titleSuffix: "— Biography",
+      titleSuffix: "вЂ” Biography",
       tagline: "Minimalist biography website",
       aboutTitle: "About",
       aboutText:
@@ -42,7 +42,7 @@ const SITE = {
       soundcloudLabel: "SoundCloud",
       instagramLabel: "Instagram",
       telegramBotLabel: "Telegram Archive",
-      botNote: "Telegram bot for open-source intelligence (OSINT) over public data sources. As of 07.11.2025 — closed beta; public release planned. Use only in compliance with law and platform policies.",
+      botNote: "Telegram bot for open-source intelligence (OSINT) over public data sources. As of 07.11.2025 вЂ” closed beta; public release planned. Use only in compliance with law and platform policies.",
       tiktokLabel: "TikTok",
       discordLabel: "Discord",
       metaDescription: "Short biography of {nickname}."
@@ -61,18 +61,15 @@ const SITE = {
 
     // Optional: classic list fields (remain supported in text list)
     email: "",
-    other: { url: "", label: { ru: "Другое", en: "Other" } }
+    other: { url: "", label: { ru: "Р”СЂСѓРіРѕРµ", en: "Other" } }
   },
   defaultLang: "ru"
 };
 // === END EDIT SECTION ===
 
-// Runtime overrides (safer for non-ASCII in some environments)
+// Runtime overrides (ensure RU/EN texts match as requested)
 try {
-  if (SITE?.text?.ru) {
-    SITE.text.ru.tagline = "Один из первых веб-проектов";
-    SITE.text.ru.botNote = "Архив фотографий из личной жизни";
-    SITE.text.ru.aboutText = `Иногда кажется, будто всё рушится сразу: планы, силы, вера в себя. Будто мир сжимается до одной точки, и ты остаёшься один на один со своей усталостью. В такие моменты хочется остановиться — перестать бороться, перестать пытаться.
+  const ruAbout = `Иногда кажется, будто всё рушится сразу: планы, силы, вера в себя. Будто мир сжимается до одной точки, и ты остаёшься один на один со своей усталостью. В такие моменты хочется остановиться — перестать бороться, перестать пытаться.
 
 Но именно тогда важнее всего — сделать хоть один маленький шаг вперёд.
 
@@ -86,10 +83,16 @@ try {
 
 Даже когда темно — иди.
 Темнота не вечна.
-А ты сильнее, чем кажешься.`;
+А ты сильнее, чем кажется.`;
+  if (SITE?.text?.ru) {
+    SITE.text.ru.tagline = "Один из первых веб-проектов";
+    SITE.text.ru.botNote = "Архив фотографий из личной жизни";
+    SITE.text.ru.aboutText = ruAbout;
   }
   if (SITE?.text?.en) {
-    SITE.text.en.botNote = "Bot is in closed beta. It helps search public open sources; public release is planned.";
+    SITE.text.en.tagline = "Один из первых веб-проектов";
+    SITE.text.en.botNote = "Архив фотографий из личной жизни";
+    SITE.text.en.aboutText = ruAbout;
   }
 } catch (_) {}
 
@@ -267,7 +270,7 @@ function render() {
   setText("contactNote", t("contactNote"));
   // Footer year
   const year = new Date().getFullYear();
-  setText("copyright", `© ${SITE.nickname}, ${year}`);
+  setText("copyright", `В© ${SITE.nickname}, ${year}`);
   updateLinks();
   buildSocialIcons();
   try { buildCalendarSkeleton(); renderCalendar(); } catch (_) {}
@@ -640,7 +643,7 @@ document.addEventListener("DOMContentLoaded", () => {
       triggerClickAt(px, py);
     }
 
-    // Pointer events (better cross‑browser, includes touch/pen)
+    // Pointer events (better crossвЂ‘browser, includes touch/pen)
     function onPointerDown(e) {
       mouseDown = true;
       const rect = canvas.getBoundingClientRect();
@@ -817,7 +820,7 @@ function createIconSVG(type) {
   function circle(cx, cy, r) { const c = document.createElementNS(ns, 'circle'); c.setAttribute('cx', cx); c.setAttribute('cy', cy); c.setAttribute('r', r); return c; }
 
   switch (type) {
-    case 'github': { // simple cat‑like glyph
+    case 'github': { // simple catвЂ‘like glyph
       svg.appendChild(path('M8 9c0-2.2 1.8-4 4-4s4 1.8 4 4'));
       svg.appendChild(path('M6 10v3c0 3.3 2.7 6 6 6s6-2.7 6-6v-3'));
       svg.appendChild(path('M9 19c0-1.1-.9-2-2-2s-2 .9-2 2'));
@@ -1606,3 +1609,4 @@ function addTilt(target, opts = {}) {
     };
   }
 }
+
