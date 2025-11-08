@@ -1,0 +1,40 @@
+name: 🚀 Deploy from GitHub
+
+on:
+  push:
+    branches:
+      - main   # або master, якщо потрібно
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: ✅ Checkout code
+        uses: actions/checkout@v3
+
+      - name: 🔑 Setup SSH key
+        uses: webfactory/ssh-agent@v0.7.0
+        with:
+          ssh-private-key: ${{ secrets.SERVER_KEY }}
+
+      - name: 📂 Copy updated code to server (git pull)
+        run: |
+          ssh -o StrictHostKeyChecking=no root@${{ secrets.SERVER_IP }} "
+            cd /var/www/html &&
+            git pull
+          "
+
+      - name: 🚀 Run deploy.sh on server
+        run: |
+          ssh -o StrictHostKeyChecking=no root@${{ secrets.SERVER_IP }} "
+            cd /var/www/html/deploy &&
+            chmod +x deploy.sh &&
+            ./deploy.sh
+          "
+
+      - name: 🔄 Restart nginx
+        run: |
+          ssh -o StrictHostKeyChecking=no root@${{ secrets.SERVER_IP }} "
+            systemctl restart nginx
+          "
