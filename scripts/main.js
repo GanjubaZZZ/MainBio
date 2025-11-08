@@ -67,7 +67,7 @@ const SITE = {
 };
 // === END EDIT SECTION ===
 
-// Runtime overrides (ensure RU/EN texts match as requested)
+// Runtime overrides (final copy for RU and EN)
 try {
   const ruAbout = `Иногда кажется, будто всё рушится сразу: планы, силы, вера в себя. Будто мир сжимается до одной точки, и ты остаёшься один на один со своей усталостью. В такие моменты хочется остановиться — перестать бороться, перестать пытаться.
 
@@ -84,15 +84,30 @@ try {
 Даже когда темно — иди.
 Темнота не вечна.
 А ты сильнее, чем кажется.`;
+  const enAbout = `Sometimes it feels like everything falls apart at once: plans, energy, confidence. As if the world shrinks to a single point and you’re left alone with your exhaustion. In those moments you want to stop—stop fighting, stop trying.
+
+But that’s exactly when one small step forward matters most.
+
+No heroics needed. No need to go fast. It’s enough to simply continue. One more day. One more attempt. One more “I’ll try.”
+
+True strength isn’t when everything works out, but when it doesn’t—and you still keep going. Life throws challenges, sows doubt, tests your resilience. Yet with every step, a new steadiness appears inside, a new understanding of yourself.
+
+Let the path be slow. Let the steps be uneven. That’s okay. The main thing is not to stop.
+
+Because ahead there is always something worth moving toward: new encounters, new discoveries, new dreams waiting for their moment.
+
+Even when it’s dark—keep going.
+Darkness isn’t forever.
+And you are stronger than you think.`;
   if (SITE?.text?.ru) {
     SITE.text.ru.tagline = "Один из первых веб-проектов";
     SITE.text.ru.botNote = "Архив фотографий из личной жизни";
     SITE.text.ru.aboutText = ruAbout;
   }
   if (SITE?.text?.en) {
-    SITE.text.en.tagline = "Один из первых веб-проектов";
-    SITE.text.en.botNote = "Архив фотографий из личной жизни";
-    SITE.text.en.aboutText = ruAbout;
+    SITE.text.en.tagline = "One of the first web projects";
+    SITE.text.en.botNote = "Archive of photos from personal life";
+    SITE.text.en.aboutText = enAbout;
   }
 } catch (_) {}
 
